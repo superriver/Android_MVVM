@@ -1,0 +1,89 @@
+apply plugin: 'com.android.library'
+apply plugin: 'maven'
+
+android {
+    compileSdkVersion 27
+
+
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+
+    api 'com.android.support:appcompat-v7:27.1.1'
+    //自动适配库  git:AndroidAutoLayout
+    api 'com.zhy:autolayout:1.4.5'
+    //ButterKnife
+    /* implementation 'com.jakewharton:butterknife:8.5.1'
+         annotationProcessor 'com.jakewharton:butterknife-implementationr:8.5.1'*/
+    api 'com.jakewharton:butterknife:8.4.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+    //Material Design Google支持包
+    //topsnackbar
+    api 'com.androidadvance:topsnackbar:1.1.1'
+    //recyclerView
+    //retrofit 相关
+    api 'com.squareup.retrofit2:retrofit:2.3.0'
+    api 'com.google.code.gson:gson:2.8.2'
+    api 'com.squareup.retrofit2:converter-gson:2.3.0'
+    api 'com.squareup.okhttp:okhttp:2.7.0'
+    api 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    api 'com.orhanobut:logger:2.1.0'
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    //Stetho FaceBook 网络调试工具
+    api 'com.facebook.stetho:stetho:1.4.1'
+    api 'com.facebook.stetho:stetho-okhttp3:1.4.1'
+    //图片下载 picasso
+    api 'com.squareup.picasso:picasso:2.5.2'
+    //circleImageView 圆形图片
+    api 'de.hdodenhof:circleimageview:2.1.0'
+    //EventBus
+    api 'org.greenrobot:eventbus:3.0.0'
+    //图片裁剪  jdamcd/android-crop
+    api 'com.soundcloud.android:android-crop:1.0.1@aar'
+    //扫描二维码   ZXing Android Embedded
+    api 'com.journeyapps:zxing-android-embedded:3.4.0'
+    //生成二维码   ZXing mini
+    api 'com.google.zxing:core:3.2.1'
+    //二维码相关  ZXing
+    api 'com.github.yoojia:zxing:0.7@aar'
+    //下拉刷新   LoadingViewFinal
+    api 'cn.finalteam.loadingviewfinal:loading-more-view:1.0.1'
+    api 'cn.finalteam.loadingviewfinal:loading-more-view:1.0.1'
+    api 'cn.finalteam.loadingviewfinal:swipe-refresh-layout:1.0.1'
+    api 'cn.finalteam.loadingviewfinal:ultra-pull-to-refresh:1.0.1'
+    //recycleView 拖动排序，展开等  h6ah4i/android-advancedrecyclerview
+    api('com.h6ah4i.android.widget.advrecyclerview:advrecyclerview:0.9.3@aar') {
+        transitive = true
+    }
+
+    //解决dex的方法数量被限制在65535
+    api 'com.android.support:multidex:1.0.3'
+    //recyclerView的baseAdapter，git:baseAdapter
+    api 'com.zhy:base-rvadapter:3.0.3'
+
+    //webSocket  git:TooTallNate/Java-WebSocket
+    api "org.java-websocket:Java-WebSocket:1.3.6"
+    api 'top.zibin:Luban:1.1.7'
+
+    api 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    api 'io.reactivex.rxjava2:rxjava:2.1.9'
+}
